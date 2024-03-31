@@ -7,22 +7,22 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "student")
+@Table(name = "author")
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
-public class Students {
-
+@NoArgsConstructor
+public class Author {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer studentId;
+    private Integer authorId;
 
-    private String name;
+    private String authorName;
 
-    private String branch;
+    private int authorAge;
 
-    private double cgpa;
+    @Column(unique = true)
+    private String emailId;
 
-    private String phoneNo;
+    private int age;
 }

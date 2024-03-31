@@ -16,10 +16,17 @@ import lombok.Setter;
 public class LibraryCard {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer cardId;
 
     @Enumerated(value = EnumType.STRING)
-    private cardStatus status;
+    private cardStatus cardStatus;
 
     private Integer noOfBooksIssued;
+
+    //Library card should have the foreign key column
+    //bcz this is child class
+    @JoinColumn
+    @OneToOne
+    private Students student;
 }
